@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Wallet"
 include(":app")
+include(":home:home_presentation")
