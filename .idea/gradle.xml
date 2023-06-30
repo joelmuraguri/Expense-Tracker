@@ -9,6 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/edit" />
+            <option value="$PROJECT_DIR$/edit/edit_presentation" />
             <option value="$PROJECT_DIR$/history" />
             <option value="$PROJECT_DIR$/history/history_presentation" />
             <option value="$PROJECT_DIR$/home" />
