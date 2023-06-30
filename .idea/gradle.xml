@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/history/history_presentation" />
             <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/home/home_presentation" />
+            <option value="$PROJECT_DIR$/overview" />
+            <option value="$PROJECT_DIR$/overview/overview_presentation" />
             <option value="$PROJECT_DIR$/profile" />
             <option value="$PROJECT_DIR$/profile/profile_presentation" />
           </set>
