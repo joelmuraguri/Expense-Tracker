@@ -33,11 +33,11 @@ fun RowScope.WalletNavigationBarItem(
         label = label,
         alwaysShowLabel = alwaysShowLabel,
         colors = NavigationBarItemDefaults.colors(
-            selectedIconColor = BusterNavigationDefaults.navigationSelectedItemColor(),
-            unselectedIconColor = BusterNavigationDefaults.navigationContentColor(),
-            selectedTextColor = BusterNavigationDefaults.navigationSelectedItemColor(),
-            unselectedTextColor = BusterNavigationDefaults.navigationContentColor(),
-            indicatorColor = BusterNavigationDefaults.navigationIndicatorColor(),
+            selectedIconColor = WalletNavigationDefault.navigationSelectedItemColor(),
+            unselectedIconColor = WalletNavigationDefault.navigationContentColor(),
+            selectedTextColor = WalletNavigationDefault.navigationSelectedItemColor(),
+            unselectedTextColor = WalletNavigationDefault.navigationContentColor(),
+            indicatorColor = WalletNavigationDefault.navigationIndicatorColor(),
         ),
     )
 }
@@ -49,7 +49,7 @@ fun WalletNavigationBar(
 ) {
     NavigationBar(
         modifier = modifier,
-        contentColor = BusterNavigationDefaults.navigationContentColor(),
+        contentColor = WalletNavigationDefault.navigationContentColor(),
         tonalElevation = 0.dp,
         content = content,
     )
@@ -74,11 +74,11 @@ fun WalletNavigationRailItem(
         label = label,
         alwaysShowLabel = alwaysShowLabel,
         colors = NavigationRailItemDefaults.colors(
-            selectedIconColor = BusterNavigationDefaults.navigationSelectedItemColor(),
-            unselectedIconColor = BusterNavigationDefaults.navigationContentColor(),
-            selectedTextColor = BusterNavigationDefaults.navigationSelectedItemColor(),
-            unselectedTextColor = BusterNavigationDefaults.navigationContentColor(),
-            indicatorColor = BusterNavigationDefaults.navigationIndicatorColor(),
+            selectedIconColor = WalletNavigationDefault.navigationSelectedItemColor(),
+            unselectedIconColor = WalletNavigationDefault.navigationContentColor(),
+            selectedTextColor = WalletNavigationDefault.navigationSelectedItemColor(),
+            unselectedTextColor = WalletNavigationDefault.navigationContentColor(),
+            indicatorColor = WalletNavigationDefault.navigationIndicatorColor(),
         ),
     )
 }
@@ -93,13 +93,13 @@ fun WalletNavigationRail(
     NavigationRail(
         modifier = modifier,
         containerColor = Color.Transparent,
-        contentColor = BusterNavigationDefaults.navigationContentColor(),
+        contentColor = WalletNavigationDefault.navigationContentColor(),
         header = header,
         content = content,
     )
 }
 
-object BusterNavigationDefaults {
+object WalletNavigationDefault {
     @Composable
     fun navigationContentColor() = MaterialTheme.colorScheme.onSurfaceVariant
 
