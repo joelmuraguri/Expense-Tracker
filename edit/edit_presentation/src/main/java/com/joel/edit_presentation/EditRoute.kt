@@ -11,7 +11,7 @@ fun NavController.navigateToEdit(navOptions: NavOptions?= null){
     this.navigate(EDIT_ROUTE, navOptions)
 }
 
-fun NavGraphBuilder.homeRoute(){
+fun NavGraphBuilder.editRoute(){
     composable(route = EDIT_ROUTE){
         EditScreen()
     }

@@ -12,6 +12,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material3.FabPosition
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -22,6 +27,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
+import com.joel.edit_presentation.navigateToEdit
 import com.joel.myapplication.navigation.BottomBarDestinations
 import com.joel.myapplication.navigation.WalletNavHost
 import com.joel.myapplication.navigation.WalletNavigationBar
@@ -48,7 +54,16 @@ fun WalletApp(
                     currentDestination = appState.currentDestination,
                 )
             }
-        }
+        },
+        floatingActionButton = {
+                FloatingActionButton(
+                    onClick = { appState.navController.navigateToEdit() },
+                    shape = RoundedCornerShape(50),
+                ) {
+                    Icon(imageVector = Icons.Default.Add, contentDescription = "")
+                }
+        },
+        floatingActionButtonPosition = FabPosition.Center
 
     ) { paddingValues ->
 

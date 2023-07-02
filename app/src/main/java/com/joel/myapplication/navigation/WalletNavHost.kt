@@ -3,6 +3,7 @@ package com.joel.myapplication.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.joel.edit_presentation.editRoute
 import com.joel.history_presentation.historyRoute
 import com.joel.home_presentation.HOME_ROUTE
 import com.joel.home_presentation.homeRoute
@@ -28,7 +29,6 @@ fun WalletNavHost(
         overViewRoute()
         historyRoute()
         profileRoute()
+        editRoute()
     }
-
-
 }

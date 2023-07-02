@@ -12,6 +12,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import androidx.tracing.trace
+import com.joel.edit_presentation.EDIT_ROUTE
 import com.joel.history_presentation.navigateToHistory
 import com.joel.home_presentation.navigateToHome
 import com.joel.myapplication.navigation.BottomBarDestinations
