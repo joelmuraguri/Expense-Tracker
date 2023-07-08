@@ -56,11 +56,13 @@ fun WalletApp(
             }
         },
         floatingActionButton = {
-                FloatingActionButton(
-                    onClick = { appState.navController.navigateToEdit() },
-                    shape = RoundedCornerShape(50),
-                ) {
-                    Icon(imageVector = Icons.Default.Add, contentDescription = "")
+                if(appState.shouldShowFAB){
+                    FloatingActionButton(
+                        onClick =  appState::navigateToEdit ,
+                        shape = RoundedCornerShape(50),
+                    ) {
+                        Icon(imageVector = Icons.Default.Add, contentDescription = "")
+                    }
                 }
         },
         floatingActionButtonPosition = FabPosition.Center
