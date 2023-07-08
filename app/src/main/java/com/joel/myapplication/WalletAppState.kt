@@ -12,7 +12,6 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import androidx.tracing.trace
-import com.joel.edit_presentation.EDIT_ROUTE
 import com.joel.edit_presentation.navigateToEdit
 import com.joel.history_presentation.navigateToHistory
 import com.joel.home_presentation.navigateToHome
@@ -81,13 +80,6 @@ class WalletAppState(
 
 
     fun navigateToEdit(){
-        val fabNavOptions = navOptions {
-            popUpTo(navController.graph.findStartDestination().id) {
-                saveState = true
-            }
-            launchSingleTop = true
-            restoreState = true
-        }
-        navController.navigateToEdit(fabNavOptions)
+        navController.navigateToEdit()
     }
 }

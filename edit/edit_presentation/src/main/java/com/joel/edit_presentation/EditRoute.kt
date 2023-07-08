@@ -11,8 +11,10 @@ const val EDIT_ROUTE = "edit"
 const val ADD_EXPENSE_ROUTE = "add_expense"
 const val ADD_INCOME_ROUTE = "add_income"
 
-fun NavController.navigateToEdit(navOptions: NavOptions?= null){
-    this.navigate(EDIT_ROUTE, navOptions)
+fun NavController.navigateToEdit(){
+    this.navigate(EDIT_ROUTE){
+        launchSingleTop = true
+    }
 }
 
 fun NavController.navigateToAddExpense(){
