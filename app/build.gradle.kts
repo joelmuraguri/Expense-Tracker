@@ -49,11 +49,7 @@ android {
 
 dependencies {
 
-    implementation(project(":home:home_presentation"))
-    implementation(project(":edit:edit_presentation"))
-    implementation(project(":overview:overview_presentation"))
-    implementation(project(":history:history_presentation"))
-    implementation(project(":profile:profile_presentation"))
+    implementation(project(":core:design"))
 
     implementation(libs.androidx.tracing.ktx)
     implementation(libs.androidx.compose.runtime.tracing)

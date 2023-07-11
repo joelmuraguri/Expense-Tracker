@@ -38,3 +38,24 @@ fun NavigationToolBar(
     )
     
 }
+
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ProfileToolBar(){
+    CenterAlignedTopAppBar(
+        title = {
+            Text(
+                text = "Profile",
+                textAlign = TextAlign.Center
+            )},
+        actions = {
+                  IconButton(onClick = { /*TODO*/ }) {
+                      Icon(painter = painterResource(id = WalletIcons.Edit), contentDescription = "")
+                  }
+        },
+
+        modifier = Modifier.padding(horizontal = 16.dp)
+
+    )
+}

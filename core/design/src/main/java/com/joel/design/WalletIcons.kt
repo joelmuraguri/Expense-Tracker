@@ -14,5 +14,7 @@ object WalletIcons {
     val ArrowUp = R.drawable.baseline_arrow_upward_24
     val ArrowDown = R.drawable.baseline_arrow_downward_24
     val Profile = R.drawable.baseline_person_24
+    val Edit = R.drawable.baseline_edit_24
+
 
 }
