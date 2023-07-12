@@ -3,5 +3,9 @@
     <string name="arrow_back_icon_description">ArrowBack Icon</string>
     <string name="wallet_icon_description">Wallet Icon</string>
     <string name="add_icon_description">Add Icon</string>
+    <string name="save_income_button">Add Income</string>
+    <string name="save_expense_button">Add Expense</string>
+    <string name="add_expense_top_bar_title">Add Expense</string>
+    <string name="add_income_top_bar_title">Add Income</string>
 
 </resources>
