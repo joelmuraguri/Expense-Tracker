@@ -25,10 +25,14 @@ fun WalletNavHost(){
         homeRoute(
             walletNavActions.navigateToFABRoutes
         )
-        incomeRoute()
-        expenseRoute()
-
+        incomeRoute(
+            popBackStack = {
+                navController.popBackStack()
+            })
+        expenseRoute(
+            popBackStack = {
+                navController.popBackStack()
+            }
+        )
     }
-
-
 }
