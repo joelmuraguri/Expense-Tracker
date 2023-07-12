@@ -6,15 +6,21 @@ import androidx.navigation.compose.composable
 const val INCOME_ROUTE = "income_route"
 const val EXPENSE_ROUTE = "expense_route"
 
-fun NavGraphBuilder.expenseRoute(){
+fun NavGraphBuilder.expenseRoute(
+    popBackStack :() -> Unit
+
+){
     composable(route = EXPENSE_ROUTE){
-        ExpenseScreen()
+        ExpenseScreen(popBackStack)
     }
 
 }
 
-fun NavGraphBuilder.incomeRoute(){
+fun NavGraphBuilder.incomeRoute(
+    popBackStack :() -> Unit
+
+){
     composable(route = INCOME_ROUTE){
-        IncomeScreen()
+        IncomeScreen(popBackStack)
     }
 }

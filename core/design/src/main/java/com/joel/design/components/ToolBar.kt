@@ -1,5 +1,6 @@
 package com.joel.design.components
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -19,13 +20,13 @@ import com.joel.design.WalletIcons
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavigationToolBar(
-    title : String,
+    @StringRes title : Int,
     popBackStack : () -> Unit
 ){
     CenterAlignedTopAppBar(
         title = {
             Text(
-                text = title,
+                text = stringResource(id = title),
                 textAlign = TextAlign.Center
             )},
         navigationIcon = {
@@ -33,7 +34,7 @@ fun NavigationToolBar(
                 Icon(painter = painterResource(id = WalletIcons.ArrowBack), contentDescription = stringResource(id = R.string.arrow_back_icon_description))
             }
         },
-        modifier = Modifier.padding(horizontal = 16.dp)
+        modifier = Modifier.padding(horizontal = 16.dp,vertical = 10.dp)
 
     )
     
