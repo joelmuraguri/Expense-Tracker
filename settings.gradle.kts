@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Wallet"
 include(":app")
 include(":core:design")
+include(":firebase:account")
