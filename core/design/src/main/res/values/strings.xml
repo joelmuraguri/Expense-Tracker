@@ -2,10 +2,28 @@
 <resources>
     <string name="arrow_back_icon_description">ArrowBack Icon</string>
     <string name="wallet_icon_description">Wallet Icon</string>
+    <string name="visibilty_icon_description">Visibilty Icon</string>
+    <string name="visibilty_off_icon_description">Visibility Off Icon</string>
     <string name="add_icon_description">Add Icon</string>
     <string name="save_income_button">Add Income</string>
     <string name="save_expense_button">Add Expense</string>
     <string name="add_expense_top_bar_title">Add Expense</string>
     <string name="add_income_top_bar_title">Add Income</string>
+    <string name="email_text_field_place_holder">Email</string>
+    <string name="password_text_field_place_holder">Password</string>
+    <string name="confirm_password_text_field_place_holder">Confirm Password</string>
+    <string name="wallet_image">Logo Image</string>
+    <string name="app_motto">Better Finance Management with Wallet</string>
+    <string name="password_placeholder">Password</string>
+    <string name="confirm_password_placeholder">Confirm Password</string>
+    <string name="email_placeholder">Email</string>
+    <string name="name_placeholder">Name</string>
+    <string name="continue_button">Continue</string>
+    <string name="sign_in_as_guest_button">Sign in as Guest</string>
+    <string name="sign_in_with_google_button">Sign in with Google</string>
+    <string name="sign_up_button_o">New to Wallet? Join Now</string>
+    <string name="sign_up_button">Agree &amp; Join</string>
+    <string name="or_text">Or</string>
+    <string name="terms_and_policy">By clicking Agree &amp; Join, you agree to User Agreements and Privacy Policy </string>
 
 </resources>
