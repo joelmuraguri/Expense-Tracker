@@ -1,5 +1,7 @@
 package com.joel.design
 
+import android.opengl.Visibility
+
 object WalletIcons {
 
     val walletIcon = R.drawable.baseline_account_wallet_24
@@ -15,6 +17,8 @@ object WalletIcons {
     val ArrowDown = R.drawable.baseline_arrow_downward_24
     val Profile = R.drawable.baseline_person_24
     val Edit = R.drawable.baseline_edit_24
+    val Visibility = R.drawable.baseline_visibility_24
+    val VisibilityOff = R.drawable.baseline_visibility_off_24
 
 
 }
