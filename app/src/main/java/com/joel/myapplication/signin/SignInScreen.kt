@@ -20,7 +20,7 @@ import com.joel.design.components.EmailField
 import com.joel.design.components.NavigationToolBar
 import com.joel.design.components.PasswordField
 import com.joel.design.components.SignInSignUpActionButton
-import com.joel.myapplication.splash.SplashOutlinedButtons
+import com.joel.myapplication.welcome.WelcomeOutlinedButtons
 
 @Composable
 fun SignInScreen(){
@@ -78,7 +78,7 @@ fun SignInContents(
             fontSize = 20.sp,
             color = Color.LightGray,
         )
-        SplashOutlinedButtons()
+        WelcomeOutlinedButtons()
     }
 }
 

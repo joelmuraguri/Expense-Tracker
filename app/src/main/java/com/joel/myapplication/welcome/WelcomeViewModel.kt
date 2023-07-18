@@ -1,9 +1,9 @@
-package com.joel.myapplication.splash
+package com.joel.myapplication.welcome
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 
-class SplashViewModel : ViewModel() {
+class WelcomeViewModel : ViewModel() {
 
     var uiState = mutableStateOf(SplashState())
         private set

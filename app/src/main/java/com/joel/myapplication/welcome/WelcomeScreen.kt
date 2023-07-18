@@ -1,9 +1,8 @@
-package com.joel.myapplication.splash
+package com.joel.myapplication.welcome
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -21,7 +20,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -38,12 +36,12 @@ import com.joel.design.components.GuestAndGoogleOutlinedButton
 import com.joel.design.components.SignInSignUpActionButton
 
 @Composable
-fun SplashScreen(
+fun WelcomeScreen(
     email: String,
-    splashViewModel: SplashViewModel = viewModel()
+    splashViewModel: WelcomeViewModel = viewModel()
 ){
 
-    var showBrand by remember {
+    val showBrand by remember {
         mutableStateOf(true)
     }
 
@@ -82,7 +80,7 @@ fun SplashScreen(
                         .weight(1f, fill = showBrand)
                         .animateContentSize()
                 )
-                SplashContents(email = email, splashViewModel = splashViewModel)
+                WelcomeContents(email = email, splashViewModel = splashViewModel)
             }
         }
     }
@@ -91,9 +89,9 @@ fun SplashScreen(
 }
 
 @Composable
-fun SplashContents(
+fun WelcomeContents(
     email : String,
-    splashViewModel: SplashViewModel,
+    splashViewModel: WelcomeViewModel,
     modifier: Modifier = Modifier
 ){
 
@@ -116,13 +114,13 @@ fun SplashContents(
             color = Color.LightGray,
         )
 
-        SplashOutlinedButtons()
+        WelcomeOutlinedButtons()
     }
 }
 
 
 @Composable
-fun SplashOutlinedButtons(){
+fun WelcomeOutlinedButtons(){
 
     Column {
         GuestAndGoogleOutlinedButton(text = R.string.sign_in_as_guest_button)
@@ -173,7 +171,7 @@ private fun Logo(
 
 @Preview
 @Composable
-fun SplashPreview(){
+fun WelcomePreview(){
     val email = ""
-    SplashScreen(email = email)
+    WelcomeScreen(email = email)
 }
