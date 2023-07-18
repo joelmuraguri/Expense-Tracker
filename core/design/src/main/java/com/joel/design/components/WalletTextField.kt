@@ -69,6 +69,7 @@ fun NameField(
             onNameValue(it)
         },
         modifier = Modifier
+            .padding(horizontal = 16.dp, vertical = 8.dp)
             .fillMaxWidth(),
         textStyle = MaterialTheme.typography.bodyMedium,
         keyboardOptions = KeyboardOptions.Default.copy(
