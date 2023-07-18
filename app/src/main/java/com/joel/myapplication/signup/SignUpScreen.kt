@@ -24,16 +24,23 @@ import com.joel.design.components.PasswordField
 import com.joel.design.components.SignInSignUpActionButton
 
 @Composable
-fun SignUpScreen(){
+fun SignUpScreen(
+    signIn : () -> Unit,
+    popBackStack : () -> Unit,
+    signUp: () -> Unit
+){
 
     Scaffold(
         bottomBar = {
-            SignInSignUpActionButton(text = R.string.sign_in_button)
+            SignInSignUpActionButton(
+                text = R.string.sign_in_button,
+                onClick = signIn
+            )
         },
         topBar = {
             NavigationToolBar(
                 title = R.string.create_account_top_bar_title,
-                popBackStack = {}
+                popBackStack = popBackStack
             )
         }
     ) { innerPadding ->
@@ -41,7 +48,8 @@ fun SignUpScreen(){
         SignUpContents(
             modifier = Modifier
                 .padding(innerPadding)
-                .verticalScroll(rememberScrollState())
+                .verticalScroll(rememberScrollState()),
+            signUp = signUp
         )
     }
 
@@ -50,7 +58,8 @@ fun SignUpScreen(){
 @Composable
 fun SignUpContents(
     modifier: Modifier = Modifier,
-    signUpViewModel: SignUpViewModel = viewModel()
+    signUpViewModel: SignUpViewModel = viewModel(),
+    signUp: () -> Unit
 ){
 
 
@@ -84,12 +93,19 @@ fun SignUpContents(
             fontSize = 12.sp,
             color = Color.LightGray
         )
-        SignInSignUpActionButton(text = R.string.sign_up_button)
+        SignInSignUpActionButton(
+            text = R.string.sign_up_button,
+            onClick = signUp
+        )
     }
 }
 
 @Preview
 @Composable
 fun SignUpPreview(){
-    SignUpScreen()
+    SignUpScreen(
+        signIn = {},
+        popBackStack = {},
+        signUp = {}
+    )
 }

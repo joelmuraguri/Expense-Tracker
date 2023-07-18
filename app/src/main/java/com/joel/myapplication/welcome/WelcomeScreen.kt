@@ -38,7 +38,12 @@ import com.joel.design.components.SignInSignUpActionButton
 @Composable
 fun WelcomeScreen(
     email: String,
-    splashViewModel: WelcomeViewModel = viewModel()
+    splashViewModel: WelcomeViewModel = viewModel(),
+    guestSignIn : () -> Unit,
+    googleSignIn : () -> Unit,
+    signUp : () -> Unit,
+    onNavToSignIn : () -> Unit
+
 ){
 
     val showBrand by remember {
@@ -47,7 +52,10 @@ fun WelcomeScreen(
 
     Scaffold(
         bottomBar = {
-            SignInSignUpActionButton(text = R.string.sign_up_button_o)
+            SignInSignUpActionButton(
+                text = R.string.sign_up_button_o,
+                onClick = signUp
+            )
         }
     ) { innerPadding ->
         Surface(
@@ -80,7 +88,13 @@ fun WelcomeScreen(
                         .weight(1f, fill = showBrand)
                         .animateContentSize()
                 )
-                WelcomeContents(email = email, splashViewModel = splashViewModel)
+                WelcomeContents(
+                    email = email,
+                    splashViewModel = splashViewModel,
+                    guestSignIn = guestSignIn,
+                    googleSignIn = googleSignIn,
+                    onNavToSignIn = onNavToSignIn
+                    )
             }
         }
     }
@@ -92,7 +106,10 @@ fun WelcomeScreen(
 fun WelcomeContents(
     email : String,
     splashViewModel: WelcomeViewModel,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    guestSignIn : () -> Unit,
+    googleSignIn : () -> Unit,
+    onNavToSignIn : () -> Unit
 ){
 
     Column(
@@ -103,7 +120,10 @@ fun WelcomeContents(
             email = email,
             onEmailValue = splashViewModel::onEmailChange
         )
-        SignInSignUpActionButton(text = R.string.continue_button)
+        SignInSignUpActionButton(
+            text = R.string.continue_button,
+            onClick = onNavToSignIn
+        )
 
         Text(
             text = stringResource(id = R.string.or_text),
@@ -114,17 +134,28 @@ fun WelcomeContents(
             color = Color.LightGray,
         )
 
-        WelcomeOutlinedButtons()
+        WelcomeOutlinedButtons(
+            guestSignIn, googleSignIn
+        )
     }
 }
 
 
 @Composable
-fun WelcomeOutlinedButtons(){
+fun WelcomeOutlinedButtons(
+    guestSignIn : () -> Unit,
+    googleSignIn : () -> Unit,
+){
 
     Column {
-        GuestAndGoogleOutlinedButton(text = R.string.sign_in_as_guest_button)
-        GuestAndGoogleOutlinedButton(text = R.string.sign_in_with_google_button)
+        GuestAndGoogleOutlinedButton(
+            text = R.string.sign_in_as_guest_button,
+            onClick = guestSignIn
+        )
+        GuestAndGoogleOutlinedButton(
+            text = R.string.sign_in_with_google_button,
+            onClick = googleSignIn
+        )
     }
 }
 @Composable
@@ -173,5 +204,12 @@ private fun Logo(
 @Composable
 fun WelcomePreview(){
     val email = ""
-    WelcomeScreen(email = email)
+    WelcomeScreen(
+        email = email,
+        googleSignIn = {},
+        guestSignIn = {},
+        signUp = {},
+        onNavToSignIn = {}
+    )
+
 }

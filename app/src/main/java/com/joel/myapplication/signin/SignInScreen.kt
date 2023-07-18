@@ -23,26 +23,36 @@ import com.joel.design.components.SignInSignUpActionButton
 import com.joel.myapplication.welcome.WelcomeOutlinedButtons
 
 @Composable
-fun SignInScreen(){
+fun SignInScreen(
+    guestSignIn : () -> Unit,
+    googleSignIn : () -> Unit,
+    signUp : () -> Unit,
+    signIn : () -> Unit,
+    popBackStack : () -> Unit
+){
 
     Scaffold(
         topBar = {
             NavigationToolBar(
                 title = com.joel.design.R.string.sign_in_top_bar_title,
-                popBackStack = {
-
-                }
+                popBackStack = popBackStack
             )
         },
         bottomBar = {
-            SignInSignUpActionButton(text = com.joel.design.R.string.sign_up_button_o)
+            SignInSignUpActionButton(
+                text = com.joel.design.R.string.sign_up_button_o,
+                onClick = signUp
+            )
         }
     ) { innerPadding ->
 
         SignInContents(
             modifier = Modifier
                 .padding(innerPadding)
-                .verticalScroll(rememberScrollState())
+                .verticalScroll(rememberScrollState()),
+            guestSignIn = guestSignIn,
+            googleSignIn = googleSignIn,
+            signIn = signIn
         )
 
     }
@@ -53,6 +63,9 @@ fun SignInScreen(){
 fun SignInContents(
     modifier: Modifier = Modifier,
     signInViewModel: SignInViewModel = viewModel(),
+    guestSignIn : () -> Unit,
+    googleSignIn : () -> Unit,
+    signIn : () -> Unit
 ){
     val uiState by signInViewModel.uiState
 
@@ -69,7 +82,10 @@ fun SignInContents(
             onPasswordValue = signInViewModel::onPasswordChange,
             placeholder = com.joel.design.R.string.password_placeholder,
         )
-        SignInSignUpActionButton(text = com.joel.design.R.string.sign_in_button)
+        SignInSignUpActionButton(
+            text = com.joel.design.R.string.sign_in_button,
+            onClick = signIn
+        )
         Text(
             text = stringResource(id = com.joel.design.R.string.or_text),
             modifier = Modifier
@@ -78,12 +94,16 @@ fun SignInContents(
             fontSize = 20.sp,
             color = Color.LightGray,
         )
-        WelcomeOutlinedButtons()
+        WelcomeOutlinedButtons(
+            guestSignIn, googleSignIn
+        )
     }
 }
 
 @Preview
 @Composable
 fun SignInPreview(){
-    SignInScreen()
+    SignInScreen(
+        guestSignIn ={}, googleSignIn ={}, signUp ={}, signIn ={}, popBackStack ={}
+    )
 }

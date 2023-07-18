@@ -14,11 +14,12 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun SignInSignUpActionButton(
-    @StringRes text : Int
+    @StringRes text : Int,
+    onClick: () -> Unit
 ){
 
     Button(
-        onClick = { /*TODO*/ },
+        onClick = { onClick() },
         modifier = Modifier
             .fillMaxWidth()
             .height(70.dp)
@@ -31,11 +32,12 @@ fun SignInSignUpActionButton(
 
 @Composable
 fun GuestAndGoogleOutlinedButton(
-    @StringRes text : Int
+    @StringRes text : Int,
+    onClick : () -> Unit
 ){
 
     OutlinedButton(
-        onClick = { /*TODO*/ },
+        onClick = { onClick() },
         modifier = Modifier
             .height(70.dp)
             .fillMaxWidth()
