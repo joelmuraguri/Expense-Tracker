@@ -28,7 +28,8 @@ import com.joel.design.WalletIcons
 @Composable
 fun EmailField(
     email : String,
-    onEmailValue : (String) -> Unit
+    onEmailValue : (String) -> Unit,
+    modifier : Modifier = Modifier
 ){
 
     OutlinedTextField(
@@ -36,9 +37,9 @@ fun EmailField(
         onValueChange = {
             onEmailValue(it)
         },
-        modifier = Modifier
-            .padding(horizontal = 16.dp, vertical = 8.dp,)
-            .fillMaxSize(),
+        modifier = modifier
+            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .fillMaxWidth(),
         textStyle = MaterialTheme.typography.bodyMedium,
         keyboardOptions = KeyboardOptions.Default.copy(
             imeAction = ImeAction.Done,
@@ -49,8 +50,10 @@ fun EmailField(
                 KeyboardActions()
             }
         ),
-        placeholder = {
-            Text(text = stringResource(id = R.string.email_placeholder))
+        label = {
+            Text(
+                text = stringResource(id = R.string.email_placeholder),
+                style = MaterialTheme.typography.bodyMedium)
         })
 
 }
@@ -66,7 +69,7 @@ fun NameField(
             onNameValue(it)
         },
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxWidth(),
         textStyle = MaterialTheme.typography.bodyMedium,
         keyboardOptions = KeyboardOptions.Default.copy(
             imeAction = ImeAction.Done,
@@ -77,9 +80,10 @@ fun NameField(
                 KeyboardActions()
             }
         ),
-        placeholder ={
+        label ={
             Text(text = stringResource(id = R.string.name_placeholder))
         }
+
         )
 }
 
@@ -99,6 +103,7 @@ fun PasswordField(
             onPasswordValue(it)
         },
         modifier = modifier
+            .padding(horizontal = 16.dp, vertical = 8.dp)
             .fillMaxWidth(),
         textStyle = MaterialTheme.typography.bodyMedium,
         trailingIcon = {
@@ -130,8 +135,10 @@ fun PasswordField(
                 KeyboardActions()
             }
         ),
-        placeholder ={
-            Text(text = stringResource(id = placeholder))
+        label ={
+            Text(
+                text = stringResource(id = placeholder),
+                style = MaterialTheme.typography.bodyMedium)
         }
     )
 }
