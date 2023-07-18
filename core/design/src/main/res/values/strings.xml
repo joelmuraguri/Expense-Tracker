@@ -8,6 +8,8 @@
     <string name="save_income_button">Add Income</string>
     <string name="save_expense_button">Add Expense</string>
     <string name="add_expense_top_bar_title">Add Expense</string>
+    <string name="sign_in_top_bar_title">Sign In</string>
+    <string name="create_account_top_bar_title">Create Account</string>
     <string name="add_income_top_bar_title">Add Income</string>
     <string name="email_text_field_place_holder">Email</string>
     <string name="password_text_field_place_holder">Password</string>
@@ -23,6 +25,7 @@
     <string name="sign_in_with_google_button">Sign in with Google</string>
     <string name="sign_up_button_o">New to Wallet? Join Now</string>
     <string name="sign_up_button">Agree &amp; Join</string>
+    <string name="sign_in_button">Sign In</string>
     <string name="or_text">Or</string>
     <string name="terms_and_policy">By clicking Agree &amp; Join, you agree to User Agreements and Privacy Policy </string>
 
