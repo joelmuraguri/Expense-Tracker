@@ -14,6 +14,7 @@ composeNavigation = "2.6.0"
 androidxComposeMaterial3 = "1.1.1"
 androidxComposeRuntimeTracing = "1.0.0-alpha03"
 androidxTracing = "1.1.0"
+firebase-auth-ktx = "22.1.0"
 
 
 [libraries]
@@ -37,6 +38,7 @@ androidx-navigation = { group = "androidx.navigation", name = "navigation-compos
 androidx-compose-material3-windowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class", version.ref = "androidxComposeMaterial3" }
 androidx-compose-runtime-tracing = { group = "androidx.compose.runtime", name = "runtime-tracing", version.ref = "androidxComposeRuntimeTracing" }
 androidx-tracing-ktx = { group = "androidx.tracing", name = "tracing-ktx", version.ref = "androidxTracing" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebase-auth-ktx" }
 
 
 [plugins]
