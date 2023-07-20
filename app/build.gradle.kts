@@ -3,6 +3,10 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     id("com.google.gms.google-services")
+    id("org.jetbrains.kotlin.kapt")
+    id("dagger.hilt.android.plugin")
+
+
 }
 
 android {
@@ -51,6 +55,7 @@ android {
 dependencies {
 
     implementation(project(":core:design"))
+    implementation(project(":core:utility"))
 
     implementation(libs.androidx.tracing.ktx)
     implementation(libs.androidx.compose.runtime.tracing)
@@ -66,6 +71,10 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.androidx.tracing.ktx)
     implementation(libs.firebase.auth.ktx)
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
+    kapt(libs.hilt.compiler)
+    kaptAndroidTest(libs.hilt.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
