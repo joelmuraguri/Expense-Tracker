@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Wallet</string>
+
+    <!-- SignUp Screen SnackBar Messages -->
+    <string name="invalid_email_sign_up">Please enter a valid email.</string>
+    <string name="password_error_sign_up">Your password should have at least six digits and include one digit, one lower case letter and one upper case letter.</string>
+    <string name="invalid_password_match">Passwords do not match.</string>
+
+    <!-- SignIn Screen SnackBar Messages -->
+    <string name="invalid_email_sign_in">Please enter a valid email.</string>
+    <string name="password_error_sign_in">Your password should have at least six digits and include one digit, one lower case letter and one upper case letter.</string>
+
+
 </resources>
