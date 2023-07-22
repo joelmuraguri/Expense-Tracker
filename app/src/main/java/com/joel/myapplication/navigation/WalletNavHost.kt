@@ -2,8 +2,9 @@ package com.joel.myapplication.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.rememberNavController
 import com.joel.myapplication.edit.expenseRoute
 import com.joel.myapplication.edit.incomeRoute
 import com.joel.myapplication.home.HOME_ROUTE
@@ -16,9 +17,10 @@ import com.joel.myapplication.welcome.WELCOME_ROUTE
 import com.joel.myapplication.welcome.welcomeRoute
 
 @Composable
-fun WalletNavHost(){
-
-    val navController = rememberNavController()
+fun WalletNavHost(
+    navController: NavHostController,
+    modifier: Modifier = Modifier
+){
 
     val walletNavActions = remember {
         WalletNavActions(navController)
