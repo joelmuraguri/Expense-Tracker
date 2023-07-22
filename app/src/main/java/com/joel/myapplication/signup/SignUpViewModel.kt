@@ -2,8 +2,14 @@ package com.joel.myapplication.signup
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import com.joel.myapplication.R
+import com.joel.utility.extensions.isValidEmail
+import com.joel.utility.extensions.isValidPassword
+import com.joel.utility.extensions.passwordMatches
+import com.joel.utility.snackbar.SnackBarManager
+import com.joel.utility.vm.WalletViewModel
 
-class SignUpViewModel : ViewModel() {
+class SignUpViewModel : WalletViewModel() {
 
     var uiState = mutableStateOf(SignUpState())
         private set
@@ -17,9 +23,6 @@ class SignUpViewModel : ViewModel() {
 
     private val password
         get() = uiState.value.password
-
-    private val confirmPassword
-        get() = uiState.value.confirmPassword
 
 
     fun onEmailChange(newEmail : String){
@@ -36,6 +39,31 @@ class SignUpViewModel : ViewModel() {
 
     fun onPasswordConfirmChange(confirmPassword : String){
         uiState.value = uiState.value.copy(confirmPassword = confirmPassword)
+    }
+
+    fun onSignUpClick(){
+        if (!email.isValidEmail()){
+            SnackBarManager.showMessage(R.string.invalid_email_sign_up)
+            return
+        }
+        if (!password.isValidPassword()){
+            SnackBarManager.showMessage(R.string.password_error_sign_up)
+        }
+
+        if (!password.passwordMatches(uiState.value.confirmPassword)){
+            SnackBarManager.showMessage(R.string.invalid_password_match)
+        }
+
+        launchCatching {
+
+        }
+    }
+
+    fun onSignInAsGuest(){
+        launchCatching {
+
+
+        }
     }
 
 }

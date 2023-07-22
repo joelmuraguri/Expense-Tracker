@@ -1,9 +1,13 @@
 package com.joel.myapplication.signin
 
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.ViewModel
+import com.joel.myapplication.R
+import com.joel.utility.extensions.isValidEmail
+import com.joel.utility.extensions.isValidPassword
+import com.joel.utility.snackbar.SnackBarManager
+import com.joel.utility.vm.WalletViewModel
 
-class SignInViewModel : ViewModel() {
+class SignInViewModel : WalletViewModel() {
 
     var uiState = mutableStateOf(SignInUIState())
         private set
@@ -22,6 +26,18 @@ class SignInViewModel : ViewModel() {
 
     fun onPasswordChange(newPassword : String){
         uiState.value = uiState.value.copy(password = newPassword)
+    }
+
+    fun onSignInClick(){
+        if (!email.isValidEmail()){
+            SnackBarManager.showMessage(R.string.invalid_email_sign_in)
+            return
+        }
+        if (!password.isValidPassword()){
+            SnackBarManager.showMessage(R.string.password_error_sign_in)
+            return
+        }
+
     }
 
 

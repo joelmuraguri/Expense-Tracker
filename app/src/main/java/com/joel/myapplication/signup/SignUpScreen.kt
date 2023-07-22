@@ -95,7 +95,9 @@ fun SignUpContents(
         )
         SignInSignUpActionButton(
             text = R.string.sign_up_button,
-            onClick = signUp
+            onClick = {
+                signUpViewModel.onSignUpClick()
+            }
         )
     }
 }

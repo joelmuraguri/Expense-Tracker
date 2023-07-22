@@ -84,7 +84,9 @@ fun SignInContents(
         )
         SignInSignUpActionButton(
             text = com.joel.design.R.string.sign_in_button,
-            onClick = signIn
+            onClick = {
+                signInViewModel.onSignInClick()
+            }
         )
         Text(
             text = stringResource(id = com.joel.design.R.string.or_text),
